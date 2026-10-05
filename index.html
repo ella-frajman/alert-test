@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Alert Test</title>
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#14213d">
+
+  <!-- iPhone Home Screen app settings -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alert Test">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Alert Test</h1>
+    <p class="lead">Press the button, then lock your iPhone. A notification should light up the screen.</p>
+
+    <button id="testBtn" type="button">Test Notification</button>
+
+    <p id="message" class="message" role="status" aria-live="polite">Ready.</p>
+
+    <section class="checks" aria-label="Checks">
+      <h2>Checks</h2>
+      <ul>
+        <li><span>Opened from Home Screen</span><strong id="chkHome">…</strong></li>
+        <li><span>Notifications supported</span><strong id="chkSupport">…</strong></li>
+        <li><span>Permission</span><strong id="chkPerm">…</strong></li>
+      </ul>
+    </section>
+
+    <p class="note">Test version. A web notification is not a native alarm.</p>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

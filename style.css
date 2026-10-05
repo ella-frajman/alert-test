@@ -1,0 +1,79 @@
+:root {
+  --bg: #14213d;
+  --panel: #1d2d50;
+  --text: #f4f6fb;
+  --muted: #a9b4cf;
+  --accent: #ffb703;
+  --accent-text: #14213d;
+  --ok: #7ee2a8;
+  --bad: #ff8a80;
+  box-sizing: border-box;
+}
+*, *::before, *::after { box-sizing: inherit; }
+
+html, body { margin: 0; min-height: 100%; background: var(--bg); }
+
+body {
+  color: var(--text);
+  font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 28px 22px 40px;
+}
+
+h1 { font-size: 2rem; margin: 12px 0 8px; letter-spacing: -0.02em; }
+h2 { font-size: 1rem; margin: 0 0 10px; color: var(--muted); font-weight: 600; }
+
+.lead { font-size: 1.05rem; line-height: 1.5; color: var(--muted); margin: 0 0 28px; }
+
+#testBtn {
+  width: 100%;
+  min-height: 72px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+#testBtn:active { transform: scale(0.98); }
+#testBtn:disabled { opacity: 0.6; }
+#testBtn:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+
+.message {
+  min-height: 3.2em;
+  margin: 18px 0 26px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--panel);
+  line-height: 1.45;
+  font-size: 1.05rem;
+}
+.message.ok { color: var(--ok); }
+.message.bad { color: var(--bad); }
+
+.checks { background: var(--panel); border-radius: 14px; padding: 16px; }
+.checks ul { list-style: none; margin: 0; padding: 0; }
+.checks li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.checks li:first-child { border-top: 0; }
+.checks strong.yes { color: var(--ok); }
+.checks strong.no { color: var(--bad); }
+
+.note { color: var(--muted); font-size: 0.9rem; margin-top: 26px; }
+
+@media (prefers-reduced-motion: reduce) {
+  #testBtn:active { transform: none; }
+}
